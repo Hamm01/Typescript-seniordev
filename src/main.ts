@@ -10,16 +10,8 @@ type User = {
 
 function createUser(user: User) {}
 function updateUser(user: User) {}
-function renderUserDetails(user: User) {
+function renderUserDetails(user: Pick<User, 'name' | 'age'>) {
   console.log(user.name, user.age)
 }
 
-renderUserDetails({
-  id: '343',
-  name: 'kumar Gaurav',
-  age: 30,
-  address: {
-    street: '123 street',
-    city: 'Delhi'
-  }
-})
+renderUserDetails({ name: 'gamer', age: 23 })
