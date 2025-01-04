@@ -9,18 +9,12 @@ type User = {
 }
 
 function createUser(user: Omit<User, 'id'>) {}
-function updateUser(user: User) {}
+function updateUser(user: Partial<User>) {}
 function renderUserDetails(user: Pick<User, 'name' | 'age'>) {
   console.log(user.name, user.age)
 }
 
-// By using omit we are not passing id in the argument, our type User is used and in future if we change definition of type User that will not effect in CreateUser function
+// By using partial its like all the keys in type are
+// optional so we can use as much keys we want
 
-createUser({
-  name: 'gamer',
-  age: 23,
-  address: {
-    city: 'sdf',
-    street: 'dfgdg'
-  }
-})
+updateUser({ name: 'prodev' })
