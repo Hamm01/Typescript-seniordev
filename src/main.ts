@@ -8,13 +8,25 @@ type User = {
   }
 }
 
+function createUserWithAddress(user: Required<User>) {
+  console.log(user)
+}
+
 function createUser(user: Omit<User, 'id'>) {}
 function updateUser(user: Partial<User>) {}
 function renderUserDetails(user: Pick<User, 'name' | 'age'>) {
   console.log(user.name, user.age)
 }
 
-// By using partial its like all the keys in type are
-// optional so we can use as much keys we want
+// By using required its like all the keys in type are
+// we have pass otherwise it will give an error
 
-updateUser({ name: 'prodev' })
+createUserWithAddress({
+  name: 'casinor',
+  id: 'dfd',
+  age: 29,
+  address: {
+    street: 'sdfd',
+    city: 'fance'
+  }
+})
