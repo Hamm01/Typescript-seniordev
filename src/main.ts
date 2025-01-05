@@ -8,18 +8,11 @@ type User = {
   }
 }
 
-type T = Record<string, User>
+type T = Record<'admin' | 'user', { test: string }>
 
-//Record is key value pair, first is some sort of key which is like string, and value is User object
+//Record is key value pair, we can user in key like admin and user, bothe with value as object taht take test as string
 const a: T = {
-  key: {
-    age: 21,
-    name: 'df',
-    id: 'dsfd',
-    address: {
-      street: '78 sjdfh',
-      city: 'beijing'
-    }
-  }
+  admin: { test: 'gamer' },
+  user: { test: 'dfd' }
 }
-console.log(a['key'])
+console.log(a)
