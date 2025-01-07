@@ -1,7 +1,11 @@
-function getUser(id: string) {
-  return { name: 'hammy', id }
+function getUser(id: string, age: number) {
+  return { name: 'hammy', id, age }
 }
 
-type T = ReturnType<typeof getUser>
+type T = Parameters<typeof getUser>
 
-// this will inferred the type for the returned  function
+// this will pass the paramaters as tuples in the code
+
+const a: T = ['fhsdfg', 44]
+
+// in this the const variable a has type T that as tuple we need to pass a string and number.
