@@ -1,10 +1,7 @@
-type Role = 'admin' | 'user' | 'moderator'
-type otherRole = 'testing' | 'admin' | 'user' | 'security'
+function getUser(id: string) {
+  return { name: 'hammy', id }
+}
 
-type T = Extract<Role, otherRole>
+type T = ReturnType<typeof getUser>
 
-// in this type T has both the common types like admin and user
-
-type B = Extract<Role, 'admin' | 'user'>
-
-// we can extract the type from role. only and admin and user will extracted and used in type B
+// this will inferred the type for the returned  function
