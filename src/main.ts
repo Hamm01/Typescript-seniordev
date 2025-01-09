@@ -5,4 +5,5 @@ class User {
   }
 }
 
-type T = ConstructorParameters<typeof User>
+type T = InstanceType<typeof User>
+type P = ConstructorParameters<typeof User>
