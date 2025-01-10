@@ -1,9 +1,5 @@
-class User {
-  name: string
-  constructor(name: string) {
-    this.name = name
-  }
-}
+type A = string | null | undefined
 
-type T = InstanceType<typeof User>
-type P = ConstructorParameters<typeof User>
+type T = NonNullable<A>
+
+// Type T is used which can be anything not null or undefined
